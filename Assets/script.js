@@ -46,16 +46,22 @@ function generatePassword() {
   if (specialCharChoice === "y") {
     userString += specialCharString;
   }
+  
+  //If no character types selected then the process will restart
   if (userString === "") {
     window.alert("Please select at least one character type! Press ok to restart");
     location.reload;
   }
 
+  //Creates an array from the concatanated string of user selected characters
   var userArray = Array.from(userString)
+  //The function to create the final password passes the args passLength and userArray
   var finalPassword = selectFromArray (passLength, userArray)  
   return finalPassword;
 }
 
+//This function selects random indexes from the userArray, and concatanates each character at 
+//that index to a final string for the password
 function selectFromArray (x, y) {
   var stringPassword = "";
   for (var i = 0; i < x; i++) {
