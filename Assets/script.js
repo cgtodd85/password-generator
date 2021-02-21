@@ -20,27 +20,35 @@ function writePassword() {
 }
 
 function generatePassword() {
-  //prompt user for amount of characters
+  //prompts user for amount of characters
   var userString = ""
   var userLength = window.prompt("Enter desired length of password from 8 to 128 characters.");
+  
+  //Turns user entry into a number
   var passLength = parseInt(userLength); 
   
+  //Asks user for input on character types they wish to use in the password
   var upperAlphaChoice = window.prompt("Do you want to include upper case letters? Type y or n")
   var lowerAlphaChoice = window.prompt("Do you want to include lower case letters? Type y or n")
   var numbersChoice = window.prompt("Do you want to include numbers? Type y or n")
   var specialCharChoice = window.prompt("Do you want to include special characters? Type y or n")
 
+  //Each if statement results in a string of characters added to the master character list "userString"
   if (upperAlphaChoice === "y") {
-    userString += upperAlphaString
+    userString += upperAlphaString;
   }
   if (lowerAlphaChoice === "y") {
-    userString += lowerAlphaString
+    userString += lowerAlphaString;
   }
   if (numbersChoice === "y") {
-    userString += numbersString
+    userString += numbersString;
   }
   if (specialCharChoice === "y") {
-    userString += specialCharString
+    userString += specialCharString;
+  }
+  if (userString === "") {
+    window.alert("Please select at least one character type! Press ok to restart");
+    location.reload;
   }
 
   var userArray = Array.from(userString)
@@ -61,23 +69,4 @@ function selectFromArray (x, y) {
 
 
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//button
-//Then prompts for criteria, user selects
-//Then prompts for length, choice between 8 and 128
-//Then prompts for character types
-//If yes for upper case, 
-
-//for loop for length of the password they chose
-//each iteration of the loop 
-
-
-
-// preventDefault() somewhere to prevent page from refreshing
-// clear the "your secure password" placeholder
-// random character generator
-// random num generator
-// random lower
-// random upper
