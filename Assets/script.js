@@ -6,13 +6,6 @@ var lowerAlphaString = "abcdefghijklmnopqrstuvwxyz";
 var numbersString = "0123456789"
 var specialCharString = "!()?[]`~;:!@#$%^&*+=";
 
-var upperAlphaArray = Array.from(upperAlphaString)
-var lowerAlphaArray = Array.from(lowerAlphaString)
-
-//testing
-console.log(upperAlphaArray)
-console.log(upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)])
-
 
 
 ////////////////////Functions////////////////////////
@@ -28,30 +21,41 @@ function writePassword() {
 
 function generatePassword() {
   //prompt user for amount of characters
+  var userString = ""
   var userLength = window.prompt("Enter desired length of password from 8 to 128 characters.");
   var passLength = parseInt(userLength); 
   
-  var finalPassword = selectFromArray (passLength)
-  
+  var upperAlphaChoice = window.prompt("Do you want to include upper case letters? Type y or n")
+  var lowerAlphaChoice = window.prompt("Do you want to include lower case letters? Type y or n")
+  var numbersChoice = window.prompt("Do you want to include numbers? Type y or n")
+  var specialCharChoice = window.prompt("Do you want to include special characters? Type y or n")
+
+  if (upperAlphaChoice === "y") {
+    userString += upperAlphaString
+  }
+  if (lowerAlphaChoice === "y") {
+    userString += lowerAlphaString
+  }
+  if (numbersChoice === "y") {
+    userString += numbersString
+  }
+  if (specialCharChoice === "y") {
+    userString += specialCharString
+  }
+
+  var userArray = Array.from(userString)
+  var finalPassword = selectFromArray (passLength, userArray)  
   return finalPassword;
 }
 
-function selectFromArray (x) {
-  var upperStringpassword = "";
+function selectFromArray (x, y) {
+  var stringPassword = "";
   for (var i = 0; i < x; i++) {
-    var randomUpper = upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)];
-    upperStringpassword += randomUpper;
+    var randomChar = y[Math.floor(Math.random() * y.length)];
+    stringPassword += randomChar;
   }
-  return upperStringpassword;
+  return stringPassword;
 }
-
-
-// function () {
-//   for (var i = 0; i < passLength; i++) {
-//     var randomUpper = upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)]
-//     var upperStringpassword = upperStringpassword + randomUpper
-//   }
-//   return upperStringpassword;
 
 //////////////////////////////////////////////////
 
