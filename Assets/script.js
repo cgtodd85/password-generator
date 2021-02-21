@@ -28,12 +28,30 @@ function writePassword() {
 
 function generatePassword() {
   //prompt user for amount of characters
-  var passLength = window.prompt("Enter desired length of password from 8 to 128 characters.")
-  var generatedPassword = passLength
+  var userLength = window.prompt("Enter desired length of password from 8 to 128 characters.");
+  var passLength = parseInt(userLength); 
   
-  return generatedPassword
+  var finalPassword = selectFromArray (passLength)
+  
+  return finalPassword;
 }
 
+function selectFromArray (x) {
+  var upperStringpassword = "";
+  for (var i = 0; i < x; i++) {
+    var randomUpper = upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)];
+    upperStringpassword += randomUpper;
+  }
+  return upperStringpassword;
+}
+
+
+// function () {
+//   for (var i = 0; i < passLength; i++) {
+//     var randomUpper = upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)]
+//     var upperStringpassword = upperStringpassword + randomUpper
+//   }
+//   return upperStringpassword;
 
 //////////////////////////////////////////////////
 
