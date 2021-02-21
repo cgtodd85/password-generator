@@ -9,23 +9,29 @@ var specialCharString = "!()?[]`~;:!@#$%^&*+=";
 var upperAlphaArray = Array.from(upperAlphaString)
 var lowerAlphaArray = Array.from(lowerAlphaString)
 
-
+//testing
 console.log(upperAlphaArray)
 console.log(upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)])
-console.log(upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)])
-console.log(upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)])
-console.log(upperAlphaArray[Math.floor(Math.random() * upperAlphaArray.length)])
+
 
 
 ////////////////////Functions////////////////////////
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword()
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
+}
+
+function generatePassword() {
+  //prompt user for amount of characters
+  var passLength = window.prompt("Enter desired length of password from 8 to 128 characters.")
+  var generatedPassword = passLength
+  
+  return generatedPassword
 }
 
 
