@@ -17,7 +17,7 @@ Once password length and character types have been chosen your very own randomiz
 Link to deployed app:
 [https://cgtodd85.github.io/password-generator/]
 
-
+![app screenshot](https://ibb.co/YbtHmQj)
 
 
 ### Collaborators
