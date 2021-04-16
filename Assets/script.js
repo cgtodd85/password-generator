@@ -33,17 +33,19 @@ function generatePassword() {
   var numbersChoice = window.prompt("Do you want to include numbers? Type y or n")
   var specialCharChoice = window.prompt("Do you want to include special characters? Type y or n")
 
+  
+
   //Each if statement results in a string of characters added to the master character list "userString"
-  if (upperAlphaChoice === "y") {
+  if (upperAlphaChoice === "y" || upperAlphaChoice === 'Y') {
     userString += upperAlphaString;
   }
-  if (lowerAlphaChoice === "y") {
+  if (lowerAlphaChoice === "y" || lowerAlphaChoice === 'Y') {
     userString += lowerAlphaString;
   }
-  if (numbersChoice === "y") {
+  if (numbersChoice === "y" || numbersChoice === 'Y') {
     userString += numbersString;
   }
-  if (specialCharChoice === "y") {
+  if (specialCharChoice === "y" || specialCharChoice === 'Y') {
     userString += specialCharString;
   }
   
